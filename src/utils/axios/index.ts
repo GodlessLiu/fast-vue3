@@ -40,9 +40,7 @@ const request = <T = any>(config: AxiosRequestConfig): Promise<T> => {
     const conf = config
     return new Promise((resolve, reject) => {
         service.request<any, AxiosResponse<IResponse>>(conf).then((res: AxiosResponse<IResponse>) => {
-            const result = {
-                data: res
-            }
+            const result = res
             resolve(result as T)
         }).catch(error => {
             reject(error)

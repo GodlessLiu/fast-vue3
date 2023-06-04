@@ -10,7 +10,8 @@ import { AutoImportDeps } from './autoimport'
 import { ConfigPagesPlugin } from './pages';
 import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin';
-import { ConfigCompressPlugin } from './compress'
+import { ConfigCompressPlugin } from './compress';
+import { ConfigUnocssPlugin } from './unocss'
 interface ViteEnv {
     [key: string]: any
 }
@@ -31,6 +32,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     vitePlugins.push(ConfigPagesPlugin());
     // 构建时显示进度条
     vitePlugins.push(ConfigProgressPlugin());
+    // unocss
+    vitePlugins.push(ConfigUnocssPlugin())
     if (isBuild) {
         // vite-plugin-imagemin
         vitePlugins.push(ConfigImageminPlugin());
