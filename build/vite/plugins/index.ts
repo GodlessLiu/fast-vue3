@@ -12,6 +12,7 @@ import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin';
 import { ConfigCompressPlugin } from './compress';
 import { ConfigUnocssPlugin } from './unocss'
+import { ConfigSvgIconsPlugin } from './svgIcons';
 interface ViteEnv {
     [key: string]: any
 }
@@ -34,6 +35,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     vitePlugins.push(ConfigProgressPlugin());
     // unocss
     vitePlugins.push(ConfigUnocssPlugin())
+    // vite-plugin-svg-icons
+    vitePlugins.push(ConfigSvgIconsPlugin(isBuild));
     if (isBuild) {
         // vite-plugin-imagemin
         vitePlugins.push(ConfigImageminPlugin());

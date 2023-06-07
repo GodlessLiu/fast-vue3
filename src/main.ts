@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import 'virtual:uno.css'
-console.log(import.meta.env);
+import 'virtual:svg-icons-register'
 
 
 const app = createApp(App)

@@ -27,6 +27,15 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     plugins: [
       createVitePlugins(env, isBuild)
-    ]
+    ],
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+          },
+          javascriptEnabled: true,
+        },
+      },
+    }
   }
 }
